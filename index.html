@@ -38,19 +38,22 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1);
+            /* transform: translateY(-5px); // Optional: disable for skills card if it feels too busy */
+            /* box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1); // Optional */
         }
+        /* Old .tag style, can be removed or repurposed if not used elsewhere */
+        /*
         .tag {
-            background-color: #374151; /* bg-gray-700 */
-            color: #9CA3AF; /* text-gray-400 */
-            padding: 0.25rem 0.75rem; /* px-3 py-1 */
-            border-radius: 9999px; /* rounded-full */
-            font-size: 0.875rem; /* text-sm */
-            margin-right: 0.5rem; /* mr-2 */
-            margin-bottom: 0.5rem; /* mb-2 */
+            background-color: #374151; 
+            color: #9CA3AF; 
+            padding: 0.25rem 0.75rem; 
+            border-radius: 9999px; 
+            font-size: 0.875rem; 
+            margin-right: 0.5rem; 
+            margin-bottom: 0.5rem; 
             display: inline-block;
         }
+        */
         nav a {
             transition: color 0.3s ease;
         }
@@ -64,7 +67,7 @@
             transform: scale(1.1);
             color: #60A5FA; /* text-blue-400 */
         }
-        /* Custom scrollbar for a more modern look */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -77,6 +80,48 @@
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #6B7280; /* bg-gray-500 */
+        }
+
+        /* Styles for new skills section */
+        .skill-filter-button {
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .skill-filter-button.active {
+            background-color: #3B82F6; /* bg-blue-500 */
+            color: #FFFFFF; /* text-white */
+            border-color: #3B82F6;
+        }
+        .skill-filter-button:not(.active) {
+            background-color: #374151; /* bg-gray-700 */
+            color: #D1D5DB; /* text-gray-300 */
+            border-color: #4B5563; /* border-gray-600 */
+        }
+        .skill-filter-button:not(.active):hover {
+            background-color: #4B5563; /* bg-gray-600 */
+        }
+        .skill-tag {
+            background-color: #4B5563; /* bg-gray-600 */
+            color: #E5E7EB; /* text-gray-200 */
+            padding: 0.5rem 0.75rem; /* py-2 px-3 */
+            border-radius: 0.375rem; /* rounded-md */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem; /* gap-x-2 */
+            transition: background-color 0.3s ease;
+        }
+        .skill-tag:hover {
+            background-color: #6B7280; /* bg-gray-500 */
+        }
+        .skill-tag i {
+            color: #9CA3AF; /* text-gray-400 */
         }
     </style>
 </head>
@@ -115,7 +160,8 @@
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://leetcode.com/u/Sujal_Ladde/" target="_blank" class="text-gray-300 hover:text-blue-400 icon-link text-3xl">
-                    <i class="fas fa-code"></i> </a>
+                    <i class="fas fa-code"></i> 
+                </a>
             </div>
             <div>
                 <a href="resume.pdf" target="_blank" 
@@ -156,7 +202,7 @@
                         <li>Managed event logistics, promotion, and participant engagement, ensuring successful outcomes.</li>
                     </ul>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="projects">
@@ -171,19 +217,14 @@
                     </div>
                     <div>
                         <div class="mb-4">
-                            <span class="tag">Arduino</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">IoT</span>
-                            <span class="tag">Sensors</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">Arduino</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">C++</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">IoT</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">Sensors</span>
                         </div>
                         <a href="https://github.com/Sujal-Ladde/Automated-Plant-Watering-System" target="_blank" class="text-blue-400 hover:text-blue-500 font-medium inline-flex items-center">
                             View on GitHub <i class="fas fa-arrow-right ml-2"></i>
                         </a>
-                        <!-- Add a live demo link if available: 
-                        <a href="#" target="_blank" class="text-blue-400 hover:text-blue-500 font-medium inline-flex items-center ml-4">
-                            Live Demo <i class="fas fa-external-link-alt ml-2"></i>
-                        </a> 
-                        -->
                     </div>
                 </div>
 
@@ -192,14 +233,16 @@
                         <h3 class="text-xl font-semibold text-blue-300 mb-2">E-commerce Website</h3>
                         <p class="text-gray-400 mb-4 text-sm">
                             Created a full-stack e-commerce platform with features like product browsing, detailed product pages, shopping cart functionality, user registration/login, and a simulated checkout process.
-                            </p>
+                        </p>
                     </div>
                     <div>
                         <div class="mb-4">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Python (Django/Flask)</span> <span class="tag">SQL/NoSQL</span> </div>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">HTML</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">CSS</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">JavaScript</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">Python (Django/Flask)</span> 
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">SQL/NoSQL</span> 
+                        </div>
                         <a href="https://github.com/Sujal-Ladde/E-commerce-Website" target="_blank" class="text-blue-400 hover:text-blue-500 font-medium inline-flex items-center">
                             View on GitHub <i class="fas fa-arrow-right ml-2"></i>
                         </a>
@@ -215,68 +258,29 @@
                     </div>
                     <div>
                         <div class="mb-4">
-                            <span class="tag">HTML</span>
-                            <span class="tag">Tailwind CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Responsive Design</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">HTML</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">Tailwind CSS</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">JavaScript</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2">Responsive Design</span>
                         </div>
                         <a href="https://github.com/Sujal-Ladde/Sujal-Ladde.github.io" target="_blank" class="text-blue-400 hover:text-blue-500 font-medium inline-flex items-center">
                             View on GitHub <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="skills">
             <h2 class="section-title">Skills</h2>
-            <div class="card max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-300 mb-3">Languages</h3>
-                        <ul class="space-y-1">
-                            <li><span class="tag">C++</span></li>
-                            <li><span class="tag">Python</span></li>
-                            <li><span class="tag">Java</span></li>
-                            <li><span class="tag">HTML</span></li>
-                            <li><span class="tag">CSS</span></li>
-                            <li><span class="tag">JavaScript</span></li>
-                        </ul>
+            <div class="card max-w-5xl mx-auto p-6 md:p-8">
+                <div id="skill-filters" class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 md:mb-8">
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-300 mb-3">Frameworks & Libraries</h3>
-                        <ul class="space-y-1">
-                            <li><span class="tag">Tailwind CSS</span></li>
-                            <li><span class="tag">Bootstrap (Basic)</span></li> 
-                            <li><span class="tag">NumPy (Basic)</span></li>
-                        </ul>
+                <div id="skills-container" class="flex flex-wrap justify-center gap-3 sm:gap-4">
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-300 mb-3">Tools & Platforms</h3>
-                        <ul class="space-y-1">
-                            <li><span class="tag">Git & GitHub</span></li>
-                            <li><span class="tag">VS Code</span></li>
-                            <li><span class="tag">Arduino IDE</span></li>
-                            <li><span class="tag">Linux (Basic)</span></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-300 mb-3">Databases</h3>
-                        <ul class="space-y-1">
-                            <li><span class="tag">MySQL (Basic)</span></li>
-                            </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-300 mb-3">Others</h3>
-                        <ul class="space-y-1">
-                            <li><span class="tag">IoT</span></li>
-                            <li><span class="tag">Problem Solving</span></li>
-                            <li><span class="tag">Data Structures</span></li>
-                            <li><span class="tag">Algorithms</span></li>
-                            <li><span class="tag">Object-Oriented Programming (OOP)</span></li>
-                        </ul>
-                    </div>
-                </div>
+                <p id="skills-count-display" class="text-center text-gray-400 mt-6 md:mt-8 text-sm">
+                    Showing <span id="displayed-skills-count" class="font-semibold">0</span> of <span id="total-skills-count" class="font-semibold">0</span> total skills
+                </p>
             </div>
         </section>
 
@@ -335,6 +339,7 @@
     </footer>
 
     <script>
+        // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Smooth scroll for navigation links
@@ -350,6 +355,112 @@
                 }
             });
         });
+
+        // Skills Section Logic
+        const skillsData = [
+            // Languages
+            { name: "C++", category: "Languages", icon: "fab fa-cuttlefish" },
+            { name: "Python", category: "Languages", icon: "fab fa-python" },
+            { name: "Java", category: "Languages", icon: "fab fa-java" },
+            { name: "SQL", category: "Languages", icon: "fas fa-database" },
+
+            // Web Development
+            { name: "HTML5", category: "Web Development", icon: "fab fa-html5" },
+            { name: "CSS3", category: "Web Development", icon: "fab fa-css3-alt" },
+            { name: "JavaScript", category: "Web Development", icon: "fab fa-js-square" },
+            { name: "Tailwind CSS", category: "Web Development", icon: "fas fa-wind" },
+            { name: "Bootstrap", category: "Web Development", icon: "fab fa-bootstrap" },
+
+            // Libraries/Frameworks
+            { name: "NumPy", category: "Libraries/Frameworks", icon: "fas fa-calculator" },
+            // Add more here e.g. { name: "React", category: "Libraries/Frameworks", icon: "fab fa-react" },
+
+            // Tools & Platforms
+            { name: "Git", category: "Tools & Platforms", icon: "fab fa-git-alt" },
+            { name: "GitHub", category: "Tools & Platforms", icon: "fab fa-github" },
+            { name: "VS Code", category: "Tools & Platforms", icon: "fas fa-code" },
+            { name: "Arduino IDE", category: "Tools & Platforms", icon: "fas fa-microchip" },
+            { name: "Linux", category: "Tools & Platforms", icon: "fab fa-linux" },
+
+            // Databases
+            { name: "MySQL", category: "Databases", icon: "fas fa-server" },
+
+            // Concepts/Other
+            { name: "IoT", category: "Concepts/Other", icon: "fas fa-wifi" },
+            { name: "Problem Solving", category: "Concepts/Other", icon: "fas fa-lightbulb" },
+            { name: "Data Structures", category: "Concepts/Other", icon: "fas fa-project-diagram" },
+            { name: "Algorithms", category: "Concepts/Other", icon: "fas fa-cogs" },
+            { name: "OOP", category: "Concepts/Other", icon: "fas fa-object-group" }
+        ];
+
+        const skillFiltersContainer = document.getElementById('skill-filters');
+        const skillsContainer = document.getElementById('skills-container');
+        const displayedSkillsCountEl = document.getElementById('displayed-skills-count');
+        const totalSkillsCountEl = document.getElementById('total-skills-count');
+
+        function renderSkills(selectedCategory = 'All Skills') {
+            skillsContainer.innerHTML = ''; // Clear existing skills
+            let displayedCount = 0;
+
+            const skillsToDisplay = (selectedCategory === 'All Skills')
+                ? skillsData
+                : skillsData.filter(skill => skill.category === selectedCategory);
+
+            skillsToDisplay.forEach(skill => {
+                const skillTag = document.createElement('div');
+                skillTag.className = 'skill-tag';
+                
+                const iconElement = document.createElement('i');
+                iconElement.className = skill.icon; // Font Awesome class
+                
+                const nameElement = document.createElement('span');
+                nameElement.textContent = skill.name;
+                
+                skillTag.appendChild(iconElement);
+                skillTag.appendChild(nameElement);
+                skillsContainer.appendChild(skillTag);
+                displayedCount++;
+            });
+            displayedSkillsCountEl.textContent = displayedCount;
+        }
+
+        function renderFilterButtons() {
+            skillFiltersContainer.innerHTML = ''; // Clear existing filters
+            const categories = ['All Skills', ...new Set(skillsData.map(skill => skill.category))];
+            
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.className = 'skill-filter-button';
+                
+                const count = (category === 'All Skills')
+                    ? skillsData.length
+                    : skillsData.filter(skill => skill.category === category).length;
+                
+                button.textContent = `${category} (${count})`;
+                button.dataset.category = category;
+
+                if (category === 'All Skills') {
+                    button.classList.add('active');
+                }
+
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('.skill-filter-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderSkills(category);
+                });
+                skillFiltersContainer.appendChild(button);
+            });
+        }
+
+        // Initial render
+        if (skillFiltersContainer && skillsContainer && displayedSkillsCountEl && totalSkillsCountEl) {
+            totalSkillsCountEl.textContent = skillsData.length;
+            renderFilterButtons();
+            renderSkills(); // Renders 'All Skills' by default
+        } else {
+            console.error("Skill section elements not found. Check IDs.");
+        }
+
     </script>
 
 </body>
