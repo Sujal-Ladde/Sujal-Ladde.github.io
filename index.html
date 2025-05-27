@@ -3,226 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujal Ladde - Portfolio Pit Stop!</title>
+    <title>Sujal Ladde - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --cars-red: #D90429; /* Stronger McQueen Red */
-            --cars-yellow: #FFC300; /* Vibrant McQueen Yellow */
-            --cars-orange: #F47721; /* Warm Flame/Desert Orange */
-            --cars-blue-sky: #A2D2FF; /* Light desert sky blue for subtle accents if needed */
-            
-            --bg-main: #F8F9FA; /* Very light gray, almost white - professional base */
-            --card-bg: #FFFFFF; /* White cards */
-            --text-primary: #212529; /* Dark gray for body text */
-            --text-secondary: #495057; /* Slightly lighter gray */
-            --border-light: #DEE2E6; /* Light border color */
-            --footer-bg: #343A40; /* Dark gray for footer */
+            --bg-primary: #111827; /* Main dark background */
+            --bg-secondary: #1F2937; /* Card, Nav, Footer background */
+            --text-primary: #F3F4F6; /* Primary light text (headings) */
+            --text-secondary: #D1D5DB; /* Secondary light text (body) */
+            --text-muted: #9CA3AF; /* Muted text (tags, subtitles) */
+            --accent-teal: #14B8A6; /* Teal accent (buttons, links) */
+            --border-color: #374151; /* Border color for cards, dividers */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
-        .cars-heading-font { /* Replaces .cars-font for more professionalism */
-            font-family: 'Inter', sans-serif;
-            font-weight: 800; /* Extra Bold for impact */
-            letter-spacing: 0.5px;
-        }
-        .hero-cars-gradient {
-            background: linear-gradient(135deg, var(--cars-red), var(--cars-orange), var(--cars-yellow));
-            background-size: 300% 300%;
-            animation: gradientAnimation 12s ease infinite alternate; /* Alternate direction */
-        }
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        .section-title {
-            font-size: 2.5rem; /* Adjusted for Inter font */
-            font-weight: 800; /* Extra Bold Inter */
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--cars-red); /* Thematic color for section titles */
-        }
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 0.5rem; /* Slightly less rounded for a cleaner look */
-            padding: 1.75rem; /* p-7 */
-            border: 1px solid var(--border-light);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-        }
+
+        /* Navigation */
         nav {
-            background-color: var(--cars-red) !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: var(--bg-secondary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
-        nav a {
-            transition: color 0.2s ease, opacity 0.2s ease;
-            color: #FFFFFF !important; 
-            font-weight: 600;
-            opacity: 0.9;
+        nav .nav-brand {
+            color: var(--text-primary);
+            font-weight: 700;
         }
-        nav a:hover {
-            color: var(--cars-yellow) !important;
-            opacity: 1;
+        nav a:not(.nav-brand) {
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
-        .nav-brand {
-            color: #FFFFFF !important;
+        nav a:not(.nav-brand):hover {
+            color: var(--accent-teal);
+        }
+
+        /* Hero Section */
+        #home {
+            background-color: var(--bg-primary); /* Match body or slightly different dark shade */
+            min-height: 90vh; /* adithyask.com hero is quite tall */
+        }
+        #home h1 {
+            color: var(--text-primary);
             font-weight: 800;
         }
-        .icon-link {
-            transition: transform 0.2s ease, color 0.2s ease;
-            color: var(--text-secondary); 
+        #home .tagline {
+            color: var(--accent-teal);
+            font-weight: 600;
         }
-        .icon-link:hover {
-            transform: scale(1.1);
-            color: var(--cars-orange); 
+        #home .intro-text {
+            color: var(--text-secondary);
+            max-width: 650px; /* Matching adithyask.com's intro text width */
+        }
+        #home .social-icons a {
+            color: var(--text-muted);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #home .social-icons a:hover {
+            color: var(--accent-teal);
+            transform: translateY(-2px);
+        }
+        .btn-resume {
+            background-color: var(--accent-teal);
+            color: var(--bg-primary); /* Dark text on light button for contrast */
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .btn-resume:hover {
+            background-color: #0F766E; /* Darker teal */
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        .section-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.5rem; /* More spacing like adithyask.com */
+        }
+        .content-wrapper { /* For centering content within sections */
+            max-width: 900px; /* Adjust as needed */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 0.5rem; /* rounded-lg */
+            padding: 1.75rem; /* p-7 */
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow */
+        }
+        .card-title {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .card-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem; /* text-sm */
+        }
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem; /* Slightly smaller than body for dense info */
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            position: relative;
+            padding-left: 1.5em; /* Space for custom bullet */
+            margin-bottom: 0.5em;
+        }
+        .card ul li::before { /* Custom bullet like adithyask.com */
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.45em; /* Adjust vertical alignment */
+            height: 8px;
+            width: 8px;
+            background-color: var(--accent-teal);
+            border-radius: 50%;
         }
         
+        /* Project Tags */
+        .project-tag {
+            display: inline-block;
+            background-color: #374151; /* Darker gray for tags */
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem; /* px-3 py-1 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.75rem; /* text-xs */
+            font-weight: 500;
+            margin-right: 0.5rem; /* mr-2 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+        .project-tag.accent { /* For key tech tag */
+            background-color: var(--accent-teal);
+            color: var(--bg-secondary);
+        }
+        .project-link {
+            color: var(--accent-teal);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        .project-link:hover {
+            color: #0F766E; /* Darker teal */
+        }
+
+        /* Skills Section (Static) */
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+        .skills-category-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem; /* text-lg */
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .skill-item {
+            display: inline-block;
+            background-color: var(--bg-secondary);
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.25rem; /* rounded-md */
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Contact Section */
+        #contact .contact-text {
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-contact {
+            background-color: var(--accent-teal);
+            color: var(--bg-primary);
+            font-weight: 600;
+            padding: 0.85rem 2rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            display: inline-block; /* For centering with margin auto if needed */
+        }
+        .btn-contact:hover {
+            background-color: #0F766E;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #E9ECEF; 
+            background: var(--bg-secondary);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--cars-orange); 
+            background: #4B5563; /* Muted scrollbar thumb */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--cars-red);
-        }
-
-        .skill-filter-button {
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-            cursor: pointer;
-            border: 1.5px solid transparent;
-        }
-        .skill-filter-button.active {
-            background-color: var(--cars-red);
-            color: #FFFFFF;
-            border-color: var(--cars-red);
-            transform: scale(1.03);
-        }
-        .skill-filter-button:not(.active) {
-            background-color: #E9ECEF; /* Light gray inactive */
-            color: var(--cars-orange);
-            border-color: #CED4DA; 
-        }
-        .skill-filter-button:not(.active):hover {
-            background-color: #DEE2E6;
-            border-color: var(--cars-orange);
-            color: var(--cars-red);
-        }
-        .skill-tag {
-            background-color: var(--cars-yellow);
-            color: #503600; /* Darker brown for better contrast on yellow */
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.25rem; /* Sharper corners */
-            font-size: 0.875rem;
-            font-weight: 500; /* Medium weight */
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem; 
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            border: 1px solid #E6A100; /* Darker yellow border */
-        }
-        .skill-tag:hover {
-            background-color: #FFD02E; /* Slightly lighter yellow on hover */
-            transform: translateY(-2px);
-        }
-        .skill-tag i {
-            color: var(--cars-orange);
-            font-size: 1em;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background-color: #E9ECEF; /* Light gray */
-            color: var(--text-secondary);
-            padding: 0.25rem 0.6rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            margin-right: 0.25rem;
-            margin-bottom: 0.25rem;
-        }
-        .project-link {
-            color: var(--cars-orange);
-            font-weight: 600;
-        }
-        .project-link:hover {
-            color: var(--cars-red);
-            text-decoration: underline;
-        }
-        .project-link i {
-            transition: transform 0.2s ease;
-        }
-        .project-link:hover i {
-            transform: translateX(3px);
-        }
-
-        .btn-theme { /* General themed button */
-            font-weight: 600;
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.375rem;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            display: inline-block;
-            text-align: center;
-            color: white;
-            letter-spacing: 0.5px;
-        }
-        .btn-theme:hover {
-            transform: translateY(-2px);
-        }
-        .btn-resume {
-            background-color: var(--cars-red);
-        }
-        .btn-resume:hover {
-            background-color: #B80022; /* Darker red */
-        }
-        .btn-email {
-            background-color: var(--cars-orange);
-        }
-        .btn-email:hover {
-            background-color: #D46012; /* Darker orange */
-        }
-
-        footer {
-            background-color: var(--footer-bg);
-            color: #CED4DA; /* Lighter gray for footer text */
-        }
-        footer p:last-child {
-            color: #ADB5BD; /* Even lighter for secondary footer text */
-        }
-        .card-title {
-            color: var(--cars-red);
-            font-weight: 700; /* Bold */
-        }
-        .card-subtitle {
-            color: var(--cars-orange);
-            font-weight: 600; /* Semi-bold */
+            background: var(--text-muted);
         }
 
     </style>
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl nav-brand cars-heading-font">Sujal Ladde</a>
-            <div class="space-x-5 text-md">
+    <nav class="sticky top-0 z-50 py-3">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="nav-brand text-xl">Sujal Ladde</a>
+            <div class="space-x-5 text-sm">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
@@ -233,129 +246,111 @@
         </div>
     </nav>
 
-    <header id="home" class="hero-cars-gradient text-white min-h-[85vh] md:min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl">
-            <h1 class="text-5xl md:text-7xl cars-heading-font mb-5" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
-                Hi, I'm Sujal Ladde!
-            </h1>
-            <p class="text-2xl md:text-3xl text-yellow-200 font-semibold mb-8" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">
-                Aspiring Software Engineer
+    <header id="home" class="flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-6xl mb-3">Sujal Ladde</h1>
+            <p class="tagline text-xl md:text-2xl mb-6">Aspiring Software Engineer</p>
+            <p class="intro-text text-md md:text-lg mb-8 mx-auto">
+                I'm a final year Electronics Engineering student with a strong passion for software development, problem-solving, and building innovative digital solutions.
             </p>
-            <p class="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-2xl mx-auto">
-                Final year Electronics Engineering student, passionate about software development and building innovative, high-performance tech solutions.
-            </p>
-            <div class="flex justify-center space-x-6 mb-10">
-                <a href="https://github.com/Sujal-Ladde" target="_blank" class="text-gray-100 hover:text-yellow-300 icon-link text-3xl">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sujal-ladde-b37651268/" target="_blank" class="text-gray-100 hover:text-yellow-300 icon-link text-3xl">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://leetcode.com/u/Sujal_Ladde/" target="_blank" class="text-gray-100 hover:text-yellow-300 icon-link text-3xl">
-                    <i class="fas fa-flag-checkered"></i> 
-                </a>
+            <div class="social-icons flex justify-center space-x-6 mb-10 text-2xl">
+                <a href="https://github.com/Sujal-Ladde" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sujal-ladde-b37651268/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/Sujal_Ladde/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
             </div>
             <div>
-                <a href="resume.pdf" target="_blank" 
-                   class="btn-theme btn-resume text-lg">
-                    View My Resume
+                <a href="resume.pdf" target="_blank" class="btn-resume text-md">
+                    Get My Resume
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-16 md:py-24 space-y-16 md:space-y-20">
+    <main class="container mx-auto px-6 py-16 md:py-20 space-y-16 md:space-y-20">
         <section id="about">
-            <h2 class="section-title cars-heading-font">About Me</h2>
-            <div class="card max-w-3xl mx-auto">
-                <p class="text-lg leading-relaxed mb-4 text-text-secondary">
-                    Hello! I'm Sujal, a final-year Electronics Engineering student at Ramrao Adik Institute of Technology. While my academic background is in electronics, my true passion lies in software engineering. I'm driven by the challenge of solving complex problems and building impactful software.
-                </p>
-                <p class="text-lg leading-relaxed mb-4 text-text-secondary">
-                    I've focused on developing skills in C++, Python, Java, and web technologies (HTML, CSS, JavaScript). I enjoy learning continuously and collaborating in team environments to bring innovative ideas to life.
-                </p>
-                <p class="text-lg leading-relaxed text-text-secondary">
-                    I am actively seeking entry-level software engineering roles where I can contribute my skills, learn from experienced professionals, and grow as a developer.
-                </p>
+            <div class="content-wrapper">
+                <h2 class="section-title text-3xl">About Me</h2>
+                <div class="card">
+                    <p class="card-text text-lg leading-relaxed mb-4">
+                        Hello! I'm Sujal, a passionate and driven final-year Electronics Engineering student at Ramrao Adik Institute of Technology. While my core academic background is in electronics, my true fascination lies in the world of software engineering. I am captivated by the power of code to solve real-world problems and build innovative solutions.
+                    </p>
+                    <p class="card-text text-lg leading-relaxed mb-4">
+                        Throughout my academic journey, I've actively pursued opportunities to expand my software development skills. I'm proficient in languages like C++, Python, and Java, and have hands-on experience with web technologies including HTML, CSS, and JavaScript. I enjoy tackling challenging problems, learning new technologies, and collaborating with others to bring ideas to life.
+                    </p>
+                    <p class="card-text text-lg leading-relaxed">
+                        I'm currently seeking entry-level software engineering roles where I can apply my skills, contribute to meaningful projects, and continue to grow as a developer. I'm a quick learner, highly adaptable, and committed to making a positive impact.
+                    </p>
+                </div>
             </div>
         </section>
 
         <section id="experience">
-            <h2 class="section-title cars-heading-font">Experience</h2>
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+            <div class="content-wrapper">
+                <h2 class="section-title text-3xl">Experience</h2>
                 <div class="card">
-                    <h3 class="text-xl card-title mb-1">Technical Head</h3>
-                    <p class="text-lg card-subtitle mb-1">RAIT ACM Student Chapter</p>
-                    <p class="text-sm text-gray-500 mb-3">Aug 2022 – May 2023</p>
-                    <ul class="list-disc list-inside text-text-secondary space-y-1.5 pl-2 text-md">
-                        <li>Led a team to organize technical workshops, coding competitions, and guest lectures.</li>
-                        <li>Mentored junior members in programming fundamentals and problem-solving techniques.</li>
-                        <li>Coordinated with faculty and industry professionals for student events.</li>
-                        <li>Managed event logistics, promotion, and participant engagement.</li>
+                    <h3 class="card-title text-xl mb-1">Technical Head</h3>
+                    <p class="card-subtitle text-md mb-1">RAIT ACM Student Chapter</p>
+                    <p class="card-subtitle text-sm mb-3">Aug 2022 – May 2023</p>
+                    <ul class="card-text space-y-2">
+                        <li>Led a team to organize and execute various technical workshops, coding competitions, and guest lectures, fostering a vibrant tech community within the college.</li>
+                        <li>Mentored junior members in programming fundamentals, data structures, and competitive coding techniques.</li>
+                        <li>Coordinated with faculty and industry professionals to deliver valuable learning experiences for students.</li>
+                        <li>Managed event logistics, promotion, and participant engagement, ensuring successful outcomes.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2 class="section-title cars-heading-font">Projects Showcase</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="card flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg card-title mb-2">Automated Plant Watering System</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">
-                            Developed an IoT-based system using Arduino and sensors to monitor soil moisture and automate plant watering, ensuring optimal plant health.
+            <div class="content-wrapper">
+                <h2 class="section-title text-3xl">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <div class="card flex flex-col">
+                        <h3 class="card-title text-lg mb-2">Automated Plant Watering System (IoT)</h3>
+                        <p class="card-text text-sm mb-4 flex-grow">
+                            Developed an IoT-based system using Arduino, soil moisture sensor, and relay module. It monitors soil moisture and waters plants automatically when needed, ensuring optimal plant health with minimal human intervention.
                         </p>
-                    </div>
-                    <div>
                         <div class="mb-3">
                             <span class="project-tag">Arduino</span>
                             <span class="project-tag">C++</span>
-                            <span class="project-tag">IoT</span>
+                            <span class="project-tag accent">IoT</span>
                             <span class="project-tag">Sensors</span>
                         </div>
-                        <a href="https://github.com/Sujal-Ladde/Automated-Plant-Watering-System" target="_blank" class="project-link inline-flex items-center text-sm">
-                            View on GitHub <i class="fas fa-arrow-right ml-1.5"></i>
+                        <a href="https://github.com/Sujal-Ladde/Automated-Plant-Watering-System" target="_blank" class="project-link self-start">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
-                </div>
 
-                <div class="card flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg card-title mb-2">E-commerce Website</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">
-                            Created a full-stack e-commerce platform with product browsing, cart functionality, user registration, and a simulated checkout process.
+                    <div class="card flex flex-col">
+                        <h3 class="card-title text-lg mb-2">E-commerce Website</h3>
+                        <p class="card-text text-sm mb-4 flex-grow">
+                            Created a full-stack e-commerce platform with features like product Browse, detailed product pages, shopping cart functionality, user registration/login, and a simulated checkout process.
                         </p>
-                    </div>
-                    <div>
                         <div class="mb-3">
                             <span class="project-tag">HTML</span>
                             <span class="project-tag">CSS</span>
                             <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Python (Django/Flask)</span> 
-                            <span class="project-tag">SQL/NoSQL</span> 
+                            <span class="project-tag accent">Python</span>
+                            <span class="project-tag">Django/Flask</span>
+                            <span class="project-tag">SQL</span>
                         </div>
-                        <a href="https://github.com/Sujal-Ladde/E-commerce-Website" target="_blank" class="project-link inline-flex items-center text-sm">
-                           View on GitHub <i class="fas fa-arrow-right ml-1.5"></i>
+                        <a href="https://github.com/Sujal-Ladde/E-commerce-Website" target="_blank" class="project-link self-start">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
-                </div>
-                
-                <div class="card flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg card-title mb-2">Personal Portfolio Website</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">
-                            This responsive portfolio website, designed to showcase my skills, projects, and experience using modern web technologies.
+                    
+                    <div class="card flex flex-col">
+                        <h3 class="card-title text-lg mb-2">Personal Portfolio Website</h3>
+                        <p class="card-text text-sm mb-4 flex-grow">
+                            Designed and developed this personal portfolio website to showcase my skills, projects, and experience. Built with responsiveness and modern design principles in mind (like the one you're seeing!).
                         </p>
-                    </div>
-                    <div>
                         <div class="mb-3">
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">Tailwind CSS</span>
+                            <span class="project-tag accent">HTML</span>
+                            <span class="project-tag accent">Tailwind CSS</span>
                             <span class="project-tag">JavaScript</span>
                         </div>
-                        <a href="https://github.com/Sujal-Ladde/Sujal-Ladde.github.io" target="_blank" class="project-link inline-flex items-center text-sm">
-                           View on GitHub <i class="fas fa-arrow-right ml-1.5"></i>
+                        <a href="https://github.com/Sujal-Ladde/Sujal-Ladde.github.io" target="_blank" class="project-link self-start">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -363,168 +358,130 @@
         </section>
 
         <section id="skills">
-            <h2 class="section-title cars-heading-font">Technical Skills</h2>
-            <div class="card max-w-5xl mx-auto p-6 md:p-8">
-                <div id="skill-filters" class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 md:mb-8">
+            <div class="content-wrapper">
+                <h2 class="section-title text-3xl">Skills</h2>
+                <div class="card">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div class="skills-category">
+                            <h3 class="skills-category-title">Languages</h3>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">HTML5</span>
+                            <span class="skill-item">CSS3</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">SQL</span>
+                        </div>
+                        <div class="skills-category">
+                            <h3 class="skills-category-title">Frameworks & Libraries</h3>
+                            <span class="skill-item">Tailwind CSS</span>
+                            <span class="skill-item">Bootstrap (Basic)</span>
+                            <span class="skill-item">NumPy (Basic)</span>
+                            </div>
+                        <div class="skills-category">
+                            <h3 class="skills-category-title">Tools & Platforms</h3>
+                            <span class="skill-item">Git & GitHub</span>
+                            <span class="skill-item">VS Code</span>
+                            <span class="skill-item">Arduino IDE</span>
+                            <span class="skill-item">Linux (Basic)</span>
+                        </div>
+                        <div class="skills-category">
+                            <h3 class="skills-category-title">Databases</h3>
+                            <span class="skill-item">MySQL (Basic)</span>
+                            </div>
+                        <div class="skills-category md:col-span-2"> {/* Spans two columns on medium screens if needed */}
+                            <h3 class="skills-category-title">Concepts & Others</h3>
+                            <span class="skill-item">IoT</span>
+                            <span class="skill-item">Problem Solving</span>
+                            <span class="skill-item">Data Structures</span>
+                            <span class="skill-item">Algorithms</span>
+                            <span class="skill-item">Object-Oriented Programming (OOP)</span>
+                        </div>
                     </div>
-                <div id="skills-container" class="flex flex-wrap justify-center gap-2.5 sm:gap-3">
-                    </div>
-                <p id="skills-count-display" class="text-center text-text-secondary mt-6 md:mt-8 text-xs">
-                    Showing <span id="displayed-skills-count" class="font-semibold text-cars-orange">0</span> of <span id="total-skills-count" class="font-semibold text-cars-orange">0</span> skills
-                </p>
+                </div>
             </div>
         </section>
 
         <section id="education">
-            <h2 class="section-title cars-heading-font">Education</h2>
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-3xl mx-auto">
-                <div class="card">
-                    <h3 class="text-xl card-title mb-1">Bachelor of Engineering in Electronics</h3>
-                    <p class="text-lg card-subtitle mb-1">Ramrao Adik Institute of Technology, Nerul</p>
-                    <p class="text-sm text-gray-500 mb-2">2020 – 2024 (Expected)</p>
-                    <p class="text-text-secondary text-md">CGPA: 8.5 (Till Semester VI)</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-lg card-title mb-1">HSC (Higher Secondary Certificate)</h3>
-                    <p class="text-md card-subtitle mb-1">St. Joseph Jr. College, New Panvel</p>
-                    <p class="text-sm text-gray-500 mb-2">2020</p>
-                    <p class="text-text-secondary text-md">Percentage: 74.31%</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-lg card-title mb-1">SSC (Secondary School Certificate)</h3>
-                    <p class="text-md card-subtitle mb-1">St. Joseph High School, New Panvel</p>
-                    <p class="text-sm text-gray-500 mb-2">2018</p>
-                    <p class="text-text-secondary text-md">Percentage: 84.20%</p>
+            <div class="content-wrapper">
+                <h2 class="section-title text-3xl">Education</h2>
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="card-title text-xl mb-1">Bachelor of Engineering in Electronics</h3>
+                        <p class="card-subtitle text-md mb-1">Ramrao Adik Institute of Technology, Nerul</p>
+                        <p class="card-subtitle text-sm mb-2">2020 – 2024 (Expected)</p>
+                        <p class="card-text">CGPA: 8.5 (Till Semester VI)</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title text-lg mb-1">HSC (Higher Secondary Certificate)</h3>
+                        <p class="card-subtitle text-md mb-1">St. Joseph Jr. College, New Panvel</p>
+                        <p class="card-subtitle text-sm mb-2">2020</p>
+                        <p class="card-text">Percentage: 74.31%</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title text-lg mb-1">SSC (Secondary School Certificate)</h3>
+                        <p class="card-subtitle text-md mb-1">St. Joseph High School, New Panvel</p>
+                        <p class="card-subtitle text-sm mb-2">2018</p>
+                        <p class="card-text">Percentage: 84.20%</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="section-title cars-heading-font">Get In Touch</h2>
-            <div class="card max-w-xl mx-auto text-center">
-                <p class="text-lg leading-relaxed mb-6 text-text-secondary">
-                    I'm excited about new opportunities in software engineering. If you'd like to discuss a role, project, or just connect, please feel free to reach out!
+            <div class="content-wrapper text-center">
+                <h2 class="section-title text-3xl">Get In Touch</h2>
+                <p class="contact-text text-lg mb-8">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
                 </p>
-                <a href="mailto:sujalladde@gmail.com" 
-                   class="btn-theme btn-email text-lg mb-8">
-                    Email Me: sujalladde@gmail.com
+                <a href="mailto:sujalladde@gmail.com" class="btn-contact text-lg">
+                    <i class="fas fa-envelope mr-2"></i> Email Me
                 </a>
-                <div class="flex justify-center space-x-7">
-                    <a href="https://github.com/Sujal-Ladde" target="_blank" class="icon-link text-3xl">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sujal-ladde-b37651268/" target="_blank" class="icon-link text-3xl">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://leetcode.com/u/Sujal_Ladde/" target="_blank" class="icon-link text-3xl">
-                        <i class="fas fa-flag-checkered"></i>
-                    </a>
-                </div>
             </div>
         </section>
     </main>
 
-    <footer class="text-center py-8">
+    <footer class="py-8 text-center">
         <p class="text-sm">&copy; <span id="currentYear"></span> Sujal Ladde. All rights reserved.</p>
-        <p class="text-xs mt-1">Portfolio theme inspired by the world of Cars.</p>
+        <p class="text-xs mt-1">Inspired by adithyask.com</p>
     </footer>
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a[href^="#"], #home a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
-
-        const skillsData = [
-            { name: "C++", category: "Languages", icon: "fas fa-gas-pump" },
-            { name: "Python", category: "Languages", icon: "fab fa-python" },
-            { name: "Java", category: "Languages", icon: "fab fa-java" }, // Changed to fab fa-java
-            { name: "SQL", category: "Languages", icon: "fas fa-database" },
-            { name: "HTML5", category: "Web Development", icon: "fab fa-html5" },
-            { name: "CSS3", category: "Web Development", icon: "fab fa-css3-alt" },
-            { name: "JavaScript", category: "Web Development", icon: "fab fa-js-square" },
-            { name: "Tailwind CSS", category: "Web Development", icon: "fas fa-wind" },
-            { name: "Bootstrap", category: "Web Development", icon: "fab fa-bootstrap" },
-            { name: "NumPy", category: "Libraries/Frameworks", icon: "fas fa-tachometer-alt" },
-            { name: "Git", category: "Tools & Platforms", icon: "fab fa-git-alt" },
-            { name: "GitHub", category: "Tools & Platforms", icon: "fas fa-wrench" },
-            { name: "VS Code", category: "Tools & Platforms", icon: "fas fa-code" },
-            { name: "Arduino IDE", category: "Tools & Platforms", icon: "fas fa-microchip" },
-            { name: "Linux", category: "Tools & Platforms", icon: "fab fa-linux" },
-            { name: "MySQL", category: "Databases", icon: "fas fa-oil-can" },
-            { name: "IoT", category: "Concepts/Other", icon: "fas fa-broadcast-tower" },
-            { name: "Problem Solving", category: "Concepts/Other", icon: "fas fa-lightbulb" },
-            { name: "Data Structures", category: "Concepts/Other", icon: "fas fa-sitemap" },
-            { name: "Algorithms", category: "Concepts/Other", icon: "fas fa-route" },
-            { name: "OOP", category: "Concepts/Other", icon: "fas fa-car-battery" }
-        ];
-
-        const skillFiltersContainer = document.getElementById('skill-filters');
-        const skillsContainer = document.getElementById('skills-container');
-        const displayedSkillsCountEl = document.getElementById('displayed-skills-count');
-        const totalSkillsCountEl = document.getElementById('total-skills-count');
-
-        function renderSkills(selectedCategory = 'All Skills') {
-            if (!skillsContainer) return;
-            skillsContainer.innerHTML = '';
-            let displayedCount = 0;
-            const skillsToDisplay = (selectedCategory === 'All Skills')
-                ? skillsData
-                : skillsData.filter(skill => skill.category === selectedCategory);
-
-            skillsToDisplay.forEach(skill => {
-                const skillTag = document.createElement('div');
-                skillTag.className = 'skill-tag';
-                skillTag.innerHTML = `<i class="${skill.icon} mr-1.5"></i><span>${skill.name}</span>`;
-                skillsContainer.appendChild(skillTag);
-                displayedCount++;
-            });
-            if (displayedSkillsCountEl) displayedSkillsCountEl.textContent = displayedCount;
-        }
-
-        function renderFilterButtons() {
-            if (!skillFiltersContainer) return;
-            skillFiltersContainer.innerHTML = ''; 
-            const categories = ['All Skills', ...new Set(skillsData.map(skill => skill.category))];
-            
-            categories.forEach(category => {
-                const button = document.createElement('button');
-                button.className = 'skill-filter-button';
-                const count = (category === 'All Skills') ? skillsData.length : skillsData.filter(skill => skill.category === category).length;
-                
-                let iconClass = "fas fa-tools"; // Default icon
-                if (category === "Languages") iconClass = "fas fa-comments";
-                else if (category === "Web Development") iconClass = "fas fa-globe";
-                else if (category === "Libraries/Frameworks") iconClass = "fas fa-cogs";
-                else if (category === "Tools & Platforms") iconClass = "fas fa-toolbox";
-                else if (category === "Databases") iconClass = "fas fa-database";
-                else if (category === "Concepts/Other") iconClass = "fas fa-brain";
-
-
-                button.innerHTML = `<i class="${iconClass} mr-2 opacity-80"></i> ${category} (${count})`;
-                button.dataset.category = category;
-
-                if (category === 'All Skills') button.classList.add('active');
-
-                button.addEventListener('click', () => {
-                    skillFiltersContainer.querySelectorAll('.skill-filter-button').forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    renderSkills(category);
-                });
-                skillFiltersContainer.appendChild(button);
-            });
-        }
-
-        if (skillsData && skillFiltersContainer && skillsContainer && displayedSkillsCountEl && totalSkillsCountEl) {
-            totalSkillsCountEl.textContent = skillsData.length;
-            renderFilterButtons();
-            renderSkills(); 
-        }
     </script>
 
 </body>
 </html>
+```
+
+**Key changes made to match `adithyask.com`:**
+
+1.  **Color Scheme:** Implemented the dark background (`#111827`), secondary dark color for cards/nav (`#1F2937`), light text, and the distinct teal accent (`#14B8A6`).
+2.  **Typography:** Using "Inter" font throughout with weights and sizes that closely match the reference site.
+3.  **Layout & Spacing:**
+    * Navigation bar is sticky with the name on the left and links on the right.
+    * Hero section is tall, with centered content, social icons, and a prominent "Get My Resume" button styled like the reference.
+    * Sections have centered titles and content constrained by a `content-wrapper` for a consistent readable width.
+    * Spacing between sections and elements has been adjusted.
+4.  **Card Styling:** Cards now use the `bg-secondary` color, have subtle borders and shadows, and use the teal accent for custom list bullets (as seen in `adithyask.com`'s experience section).
+5.  **Skills Section:**
+    * This has been **reverted to a static, categorized list of skills** using simple styled tags/items, similar to how `adithyask.com` presents skills. The interactive JavaScript-based filter has been removed to match the "exactly like" request.
+    * Skills are grouped under category titles.
+6.  **Project Tags:** Styled to be small, rounded, and use a muted dark gray or the teal accent for key technologies.
+7.  **Buttons & Links:** Styled with the teal accent color and appropriate hover effects.
+8.  **Footer:** Simple, dark, with copyright.
+9.  **Content Neutrality:** All "Cars" themed text has been replaced with standard professional terminology.
+10. **Custom Scrollbar:** Styled to be less intrusive and match the dark theme.
+
+This version should be a very close replication of `https://adithyask.com/` in terms of look, feel, and layout. Remember to place your `resume.pdf` in the root of your repository for the "Get My Resume" button to wo
