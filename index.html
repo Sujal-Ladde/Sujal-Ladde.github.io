@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujal Ladde - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #111827;
-            /* Main dark background */
-            --bg-secondary: #1F2937;
-            /* Card, Nav, Footer background */
-            --text-primary: #F3F4F6;
-            /* Primary light text (headings) */
-            --text-secondary: #D1D5DB;
-            /* Secondary light text (body) */
-            --text-muted: #9CA3AF;
-            /* Muted text (tags, subtitles) */
-            --accent-teal: #14B8A6;
-            /* Teal accent (buttons, links) */
-            --border-color: #374151;
-            /* Border color for cards, dividers */
+            --bg-primary: #111827; /* Main dark background */
+            --bg-secondary: #1F2937; /* Card, Nav, Footer background */
+            --text-primary: #F3F4F6; /* Primary light text (headings) */
+            --text-secondary: #D1D5DB; /* Secondary light text (body) */
+            --text-muted: #9CA3AF; /* Muted text (tags, subtitles) */
+            --accent-teal: #14B8A6; /* Teal accent (buttons, links) */
+            --border-color: #374151; /* Border color for cards, dividers */
         }
 
         body {
@@ -37,72 +28,56 @@
         /* Navigation */
         nav {
             background-color: var(--bg-secondary);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
-
         nav .nav-brand {
             color: var(--text-primary);
             font-weight: 700;
         }
-
         nav a:not(.nav-brand) {
             color: var(--text-secondary);
             font-weight: 500;
             transition: color 0.2s ease;
         }
-
         nav a:not(.nav-brand):hover {
             color: var(--accent-teal);
         }
 
         /* Hero Section */
         #home {
-            background-color: var(--bg-primary);
-            /* Match body or slightly different dark shade */
-            min-height: 90vh;
-            /* adithyask.com hero is quite tall */
+            background-color: var(--bg-primary); /* Match body or slightly different dark shade */
+            min-height: 90vh; /* adithyask.com hero is quite tall */
         }
-
         #home h1 {
             color: var(--text-primary);
             font-weight: 800;
         }
-
         #home .tagline {
             color: var(--accent-teal);
             font-weight: 600;
         }
-
         #home .intro-text {
             color: var(--text-secondary);
-            max-width: 650px;
-            /* Matching adithyask.com's intro text width */
+            max-width: 650px; /* Matching adithyask.com's intro text width */
         }
-
         #home .social-icons a {
             color: var(--text-muted);
             transition: color 0.2s ease, transform 0.2s ease;
         }
-
         #home .social-icons a:hover {
             color: var(--accent-teal);
             transform: translateY(-2px);
         }
-
         .btn-resume {
             background-color: var(--accent-teal);
-            color: var(--bg-primary);
-            /* Dark text on light button for contrast */
+            color: var(--bg-primary); /* Dark text on light button for contrast */
             font-weight: 600;
             padding: 0.75rem 1.75rem;
-            border-radius: 0.375rem;
-            /* rounded-md */
+            border-radius: 0.375rem; /* rounded-md */
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
-
         .btn-resume:hover {
-            background-color: #0F766E;
-            /* Darker teal */
+            background-color: #0F766E; /* Darker teal */
             transform: translateY(-2px);
         }
 
@@ -111,14 +86,10 @@
             color: var(--text-primary);
             font-weight: 700;
             text-align: center;
-            margin-bottom: 2.5rem;
-            /* More spacing like adithyask.com */
+            margin-bottom: 2.5rem; /* More spacing like adithyask.com */
         }
-
-        .content-wrapper {
-            /* For centering content within sections */
-            max-width: 900px;
-            /* Adjust as needed */
+        .content-wrapper { /* For centering content within sections */
+            max-width: 900px; /* Adjust as needed */
             margin-left: auto;
             margin-right: auto;
         }
@@ -126,116 +97,97 @@
         /* Card Styling */
         .card {
             background-color: var(--bg-secondary);
-            border-radius: 0.5rem;
-            /* rounded-lg */
-            padding: 1.75rem;
-            /* p-7 */
+            border-radius: 0.5rem; /* rounded-lg */
+            padding: 1.75rem; /* p-7 */
             border: 1px solid var(--border-color);
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            /* Subtle shadow */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow */
         }
-
-        .card-title {
+        .card-title { /* General title within a card */
             color: var(--text-primary);
             font-weight: 600;
+            font-size: 1.25rem; /* text-xl */
         }
-
-        .card-subtitle {
+        .card-subtitle { /* General subtitle within a card */
             color: var(--text-muted);
-            font-size: 0.9rem;
-            /* text-sm */
+            font-size: 0.9rem; /* text-sm */
         }
-
         .card-text {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            /* Slightly smaller than body for dense info */
+            font-size: 0.95rem; /* Slightly smaller than body for dense info */
         }
-
         .card ul {
             list-style: none;
             padding-left: 0;
         }
-
         .card ul li {
             position: relative;
-            padding-left: 1.5em;
-            /* Space for custom bullet */
+            padding-left: 1.5em; /* Space for custom bullet */
             margin-bottom: 0.5em;
         }
-
-        .card ul li::before {
-            /* Custom bullet like adithyask.com */
+        .card ul li::before { /* Custom bullet like adithyask.com */
             content: "";
             position: absolute;
             left: 0;
-            top: 0.45em;
-            /* Adjust vertical alignment */
+            top: 0.45em; /* Adjust vertical alignment */
             height: 8px;
             width: 8px;
             background-color: var(--accent-teal);
             border-radius: 50%;
         }
-
+        .about-section-subtitle { /* Specific for subtitles within the About Me card */
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.1rem; /* text-lg */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
         /* Project Tags */
         .project-tag {
             display: inline-block;
-            background-color: #374151;
-            /* Darker gray for tags */
+            background-color: #374151; /* Darker gray for tags */
             color: var(--text-muted);
-            padding: 0.25rem 0.75rem;
-            /* px-3 py-1 */
-            border-radius: 9999px;
-            /* rounded-full */
-            font-size: 0.75rem;
-            /* text-xs */
+            padding: 0.25rem 0.75rem; /* px-3 py-1 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.75rem; /* text-xs */
             font-weight: 500;
-            margin-right: 0.5rem;
-            /* mr-2 */
-            margin-bottom: 0.5rem;
-            /* mb-2 */
+            margin-right: 0.5rem; /* mr-2 */
+            margin-bottom: 0.5rem; /* mb-2 */
         }
-
-        .project-tag.accent {
-            /* For key tech tag */
+        .project-tag.accent { /* For key tech tag */
             background-color: var(--accent-teal);
             color: var(--bg-secondary);
         }
-
         .project-link {
             color: var(--accent-teal);
             font-weight: 500;
             font-size: 0.9rem;
             transition: color 0.2s ease;
         }
-
         .project-link:hover {
-            color: #0F766E;
-            /* Darker teal */
+            color: #0F766E; /* Darker teal */
         }
 
         /* Skills Section (Static) */
         .skills-category {
             margin-bottom: 1.5rem;
         }
-
         .skills-category-title {
             color: var(--text-primary);
             font-weight: 600;
-            font-size: 1.1rem;
-            /* text-lg */
+            font-size: 1.1rem; /* text-lg */
             margin-bottom: 0.75rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
-
         .skill-item {
             display: inline-block;
             background-color: var(--bg-secondary);
             color: var(--text-muted);
             padding: 0.4rem 0.8rem;
-            border-radius: 0.25rem;
-            /* rounded-md */
+            border-radius: 0.25rem; /* rounded-md */
             font-size: 0.9rem;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
@@ -250,7 +202,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .btn-contact {
             background-color: var(--accent-teal);
             color: var(--bg-primary);
@@ -258,10 +209,8 @@
             padding: 0.85rem 2rem;
             border-radius: 0.375rem;
             transition: background-color 0.2s ease, transform 0.2s ease;
-            display: inline-block;
-            /* For centering with margin auto if needed */
+            display: inline-block; /* For centering with margin auto if needed */
         }
-
         .btn-contact:hover {
             background-color: #0F766E;
             transform: translateY(-2px);
@@ -278,23 +227,19 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
-
         ::-webkit-scrollbar-track {
             background: var(--bg-secondary);
         }
-
         ::-webkit-scrollbar-thumb {
-            background: #4B5563;
-            /* Muted scrollbar thumb */
+            background: #4B5563; /* Muted scrollbar thumb */
             border-radius: 4px;
         }
-
         ::-webkit-scrollbar-thumb:hover {
             background: var(--text-muted);
         }
+
     </style>
 </head>
-
 <body>
 
     <nav class="sticky top-0 z-50 py-3">
@@ -316,18 +261,12 @@
             <h1 class="text-5xl md:text-6xl mb-3">Sujal Ladde</h1>
             <p class="tagline text-xl md:text-2xl mb-6">Aspiring Software Engineer</p>
             <p class="intro-text text-md md:text-lg mb-8 mx-auto">
-                About
-                Building robust embedded systems and performant software! I’m Sujal Ladde—a final-year Electronics &
-                Communication student at PES University with a passion for low-level programming, real-world IoT
-                solutions, and OS development. I thrive on taking complex hardware-software ideas from concept to
-                production and love sharing my work through open-source projects. </p>
+                I'm a final year Electronics Engineering student with a strong passion for software development, problem-solving, and building innovative digital solutions.
+            </p>
             <div class="social-icons flex justify-center space-x-6 mb-10 text-2xl">
-                <a href="https://github.com/Sujal-Ladde" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sujal-ladde-b37651268/" target="_blank" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://leetcode.com/u/Sujal_Ladde/" target="_blank" aria-label="LeetCode"><i
-                        class="fas fa-code"></i></a>
+                <a href="https://github.com/Sujal-Ladde" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sujal-ladde-b37651268/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/Sujal_Ladde/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
             </div>
             <div>
                 <a href="resume.pdf" target="_blank" class="btn-resume text-md">
@@ -342,76 +281,48 @@
             <div class="content-wrapper">
                 <h2 class="section-title text-3xl">About Me</h2>
                 <div class="card">
-                    <p class="card-text text-lg leading-relaxed mb-4">
-                        My Journey in Tech
-                        My fascination with programming began when I first wrote my own UART driver on an Arm®
-                        Cortex®-M0+ board. That early success sparked a deep dive into microcontroller architectures,
-                        RTOS design, and performance-critical C/C++ development. Over the years, I’ve honed my skills
-                        across embedded applications, operating-system internals, and data structures to build practical
-                        solutions that run close to the metal.
-
-                        Embedded Systems & Low-Level Software
-                        Infineon Technologies (Oct–Dec ’24): As an Embedded Systems Apprentice, I developed ADC, PWM,
-                        GPIO, and Clock drivers for the PSoC 4100S Plus. I delivered board-support packages ready for
-                        production and sharpened my understanding of Arm® Cortex®-M0+ internals.
-
-                        IEEE CRAIS, PES University (Jun–Jul ’24): Built a Gazebo/ROS-based autonomous quadcopter mapping
-                        system using depth cameras and LiDAR for warehouse automation and safety applications.
-
-                        CIE, PES University (Jun–Jul ’23): Designed a PiCam-powered rover in PyTorch and OpenCV to
-                        classify crop diseases—enabling early detection and reducing manual inspection.
-
-                        From Monolithic Kernels to Real-Time Drivers
-                        Charizard OS: A teaching operating system in C and x86 assembly, featuring protected-mode boot,
-                        GDT/IDT setup, round-robin scheduling, paging, a FAT-inspired filesystem, and modular device
-                        drivers.
-
-                        The Bear BareMetal: A bare-metal motor-control application on PSoC 4100S Plus, leveraging ADC
-                        and custom drivers for speed regulation via an analog LDR sensor.
-
-                        SALLY UART Driver: Custom UART driver with ring-buffer and DMA support for Cortex-M0+,
-                        delivering reliable, high-throughput serial communication.
-
-                        IoT & Data-Driven Applications
-                        Precision Agriculture Device: In collaboration with ICAR, deployed a Jetson Nano-based
-                        soil-nutrient monitoring system using sensors, XGBoost/SVM models, and UART data links.
-
-                        MiniScope: A Raspberry Pi Pico-powered oscilloscope and logic analyzer (500 kS/s analog; 25 MS/s
-                        digital), enabling hobbyists to visualize signals on a budget.
-
-                        Donna Record Manager: A contact-management app evolved from array-based to linked-list to
-                        hash-map implementations—optimizing lookup from O(n) to O(1).
-
-                        Technical Approach
-                        Master the fundamentals: Deep knowledge of hardware architectures guides robust driver and
-                        kernel design.
-
-                        Data-centric design: Efficient algorithms and data structures power real-time and
-                        resource-constrained systems.
-
-                        Performance & portability: Write clean, portable C/C++ code that balances speed and
-                        maintainability.
-
-                        Rigorous debugging: Systematic use of JTAG, logic analyzers, and unit tests to catch corner
-                        cases early.
-
-                        Open Source Contributions
-                        I believe in sharing knowledge. You’ll find me maintaining projects like Charizard-OS,
-                        Sally-UART, and MiniScope on GitHub—helping others learn embedded and OS principles one commit
-                        at a time. Find my repositories at github.com/Sujal-Ladde.
-
+                    <p class="card-text text-lg leading-relaxed mb-2">
+                        Building robust embedded systems and performant software! I’m Sujal Ladde—a final-year Electronics & Communication student at PES University with a passion for low-level programming, real-world IoT solutions, and OS development. I thrive on taking complex hardware-software ideas from concept to production and love sharing my work through open-source projects.
                     </p>
-                    <p class="card-text text-lg leading-relaxed mb-4">
-                        Throughout my academic journey, I've actively pursued opportunities to expand my software
-                        development skills. I'm proficient in languages like C++, Python, and Java, and have hands-on
-                        experience with web technologies including HTML, CSS, and JavaScript. I enjoy tackling
-                        challenging problems, learning new technologies, and collaborating with others to bring ideas to
-                        life.
+                    <p class="card-subtitle text-md font-semibold my-4 text-center">Sujal Ladde – Embedded Systems & Software Developer</p>
+
+                    <h3 class="about-section-subtitle">My Journey in Tech</h3>
+                    <p class="card-text mb-4">
+                        My fascination with programming began when I first wrote my own UART driver on an Arm® Cortex®-M0+ board. That early success sparked a deep dive into microcontroller architectures, RTOS design, and performance-critical C/C++ development. Over the years, I’ve honed my skills across embedded applications, operating-system internals, and data structures to build practical solutions that run close to the metal.
                     </p>
-                    <p class="card-text text-lg leading-relaxed">
-                        I'm currently seeking entry-level software engineering roles where I can apply my skills,
-                        contribute to meaningful projects, and continue to grow as a developer. I'm a quick learner,
-                        highly adaptable, and committed to making a positive impact.
+
+                    <h3 class="about-section-subtitle">Embedded Systems & Low-Level Software</h3>
+                    <ul class="card-text space-y-2 mb-4">
+                        <li><strong>Infineon Technologies (Oct–Dec ’24):</strong> As an Embedded Systems Apprentice, I developed ADC, PWM, GPIO, and Clock drivers for the PSoC 4100S Plus. I delivered board-support packages ready for production and sharpened my understanding of Arm® Cortex®-M0+ internals.</li>
+                        <li><strong>IEEE CRAIS, PES University (Jun–Jul ’24):</strong> Built a Gazebo/ROS-based autonomous quadcopter mapping system using depth cameras and LiDAR for warehouse automation and safety applications.</li>
+                        <li><strong>CIE, PES University (Jun–Jul ’23):</strong> Designed a PiCam-powered rover in PyTorch and OpenCV to classify crop diseases—enabling early detection and reducing manual inspection.</li>
+                    </ul>
+
+                    <h3 class="about-section-subtitle">From Monolithic Kernels to Real-Time Drivers</h3>
+                    <ul class="card-text space-y-2 mb-4">
+                        <li><strong>Charizard OS:</strong> A teaching operating system in C and x86 assembly, featuring protected-mode boot, GDT/IDT setup, round-robin scheduling, paging, a FAT-inspired filesystem, and modular device drivers.</li>
+                        <li><strong>The Bear BareMetal:</strong> A bare-metal motor-control application on PSoC 4100S Plus, leveraging ADC and custom drivers for speed regulation via an analog LDR sensor.</li>
+                        <li><strong>SALLY UART Driver:</strong> Custom UART driver with ring-buffer and DMA support for Cortex-M0+, delivering reliable, high-throughput serial communication.</li>
+                    </ul>
+
+                    <h3 class="about-section-subtitle">IoT & Data-Driven Applications</h3>
+                    <ul class="card-text space-y-2 mb-4">
+                        <li><strong>Precision Agriculture Device:</strong> In collaboration with ICAR, deployed a Jetson Nano-based soil-nutrient monitoring system using sensors, XGBoost/SVM models, and UART data links.</li>
+                        <li><strong>MiniScope:</strong> A Raspberry Pi Pico-powered oscilloscope and logic analyzer (500 kS/s analog; 25 MS/s digital), enabling hobbyists to visualize signals on a budget.</li>
+                        <li><strong>Donna Record Manager:</strong> A contact-management app evolved from array-based to linked-list to hash-map implementations—optimizing lookup from O(n) to O(1).</li>
+                    </ul>
+                    
+                    <h3 class="about-section-subtitle">Technical Approach</h3>
+                    <ul class="card-text space-y-2 mb-4">
+                        <li>Master the fundamentals: Deep knowledge of hardware architectures guides robust driver and kernel design.</li>
+                        <li>Data-centric design: Efficient algorithms and data structures power real-time and resource-constrained systems.</li>
+                        <li>Performance & portability: Write clean, portable C/C++ code that balances speed and maintainability.</li>
+                        <li>Rigorous debugging: Systematic use of JTAG, logic analyzers, and unit tests to catch corner cases early.</li>
+                    </ul>
+
+                    <h3 class="about-section-subtitle">Open Source Contributions</h3>
+                    <p class="card-text">
+                        I believe in sharing knowledge. You’ll find me maintaining projects like Charizard-OS, Sally-UART, and MiniScope on GitHub—helping others learn embedded and OS principles one commit at a time. Find my repositories at <a href="https://github.com/Sujal-Ladde" target="_blank" class="project-link">github.com/Sujal-Ladde</a>.
                     </p>
                 </div>
             </div>
@@ -425,14 +336,10 @@
                     <p class="card-subtitle text-md mb-1">RAIT ACM Student Chapter</p>
                     <p class="card-subtitle text-sm mb-3">Aug 2022 – May 2023</p>
                     <ul class="card-text space-y-2">
-                        <li>Led a team to organize and execute various technical workshops, coding competitions, and
-                            guest lectures, fostering a vibrant tech community within the college.</li>
-                        <li>Mentored junior members in programming fundamentals, data structures, and competitive coding
-                            techniques.</li>
-                        <li>Coordinated with faculty and industry professionals to deliver valuable learning experiences
-                            for students.</li>
-                        <li>Managed event logistics, promotion, and participant engagement, ensuring successful
-                            outcomes.</li>
+                        <li>Led a team to organize and execute various technical workshops, coding competitions, and guest lectures, fostering a vibrant tech community within the college.</li>
+                        <li>Mentored junior members in programming fundamentals, data structures, and competitive coding techniques.</li>
+                        <li>Coordinated with faculty and industry professionals to deliver valuable learning experiences for students.</li>
+                        <li>Managed event logistics, promotion, and participant engagement, ensuring successful outcomes.</li>
                     </ul>
                 </div>
             </div>
@@ -445,9 +352,7 @@
                     <div class="card flex flex-col">
                         <h3 class="card-title text-lg mb-2">Automated Plant Watering System (IoT)</h3>
                         <p class="card-text text-sm mb-4 flex-grow">
-                            Developed an IoT-based system using Arduino, soil moisture sensor, and relay module. It
-                            monitors soil moisture and waters plants automatically when needed, ensuring optimal plant
-                            health with minimal human intervention.
+                            Developed an IoT-based system using Arduino, soil moisture sensor, and relay module. It monitors soil moisture and waters plants automatically when needed, ensuring optimal plant health with minimal human intervention.
                         </p>
                         <div class="mb-3">
                             <span class="project-tag">Arduino</span>
@@ -455,8 +360,7 @@
                             <span class="project-tag accent">IoT</span>
                             <span class="project-tag">Sensors</span>
                         </div>
-                        <a href="https://github.com/Sujal-Ladde/Automated-Plant-Watering-System" target="_blank"
-                            class="project-link self-start">
+                        <a href="https://github.com/Sujal-Ladde/Automated-Plant-Watering-System" target="_blank" class="project-link self-start">
                             View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -464,9 +368,7 @@
                     <div class="card flex flex-col">
                         <h3 class="card-title text-lg mb-2">E-commerce Website</h3>
                         <p class="card-text text-sm mb-4 flex-grow">
-                            Created a full-stack e-commerce platform with features like product Browse, detailed product
-                            pages, shopping cart functionality, user registration/login, and a simulated checkout
-                            process.
+                            Created a full-stack e-commerce platform with features like product Browse, detailed product pages, shopping cart functionality, user registration/login, and a simulated checkout process.
                         </p>
                         <div class="mb-3">
                             <span class="project-tag">HTML</span>
@@ -476,26 +378,22 @@
                             <span class="project-tag">Django/Flask</span>
                             <span class="project-tag">SQL</span>
                         </div>
-                        <a href="https://github.com/Sujal-Ladde/E-commerce-Website" target="_blank"
-                            class="project-link self-start">
+                        <a href="https://github.com/Sujal-Ladde/E-commerce-Website" target="_blank" class="project-link self-start">
                             View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
-
+                    
                     <div class="card flex flex-col">
                         <h3 class="card-title text-lg mb-2">Personal Portfolio Website</h3>
                         <p class="card-text text-sm mb-4 flex-grow">
-                            Designed and developed this personal portfolio website to showcase my skills, projects, and
-                            experience. Built with responsiveness and modern design principles in mind (like the one
-                            you're seeing!).
+                            Designed and developed this personal portfolio website to showcase my skills, projects, and experience. Built with responsiveness and modern design principles in mind (like the one you're seeing!).
                         </p>
                         <div class="mb-3">
                             <span class="project-tag accent">HTML</span>
                             <span class="project-tag accent">Tailwind CSS</span>
                             <span class="project-tag">JavaScript</span>
                         </div>
-                        <a href="https://github.com/Sujal-Ladde/Sujal-Ladde.github.io" target="_blank"
-                            class="project-link self-start">
+                        <a href="https://github.com/Sujal-Ladde/Sujal-Ladde.github.io" target="_blank" class="project-link self-start">
                             View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -523,7 +421,7 @@
                             <span class="skill-item">Tailwind CSS</span>
                             <span class="skill-item">Bootstrap (Basic)</span>
                             <span class="skill-item">NumPy (Basic)</span>
-                        </div>
+                            </div>
                         <div class="skills-category">
                             <h3 class="skills-category-title">Tools & Platforms</h3>
                             <span class="skill-item">Git & GitHub</span>
@@ -534,9 +432,8 @@
                         <div class="skills-category">
                             <h3 class="skills-category-title">Databases</h3>
                             <span class="skill-item">MySQL (Basic)</span>
-                        </div>
-                        <div class="skills-category md:col-span-2"> {/* Spans two columns on medium screens if needed
-                            */}
+                            </div>
+                        <div class="skills-category md:col-span-2"> {/* Spans two columns on medium screens if needed */}
                             <h3 class="skills-category-title">Concepts & Others</h3>
                             <span class="skill-item">IoT</span>
                             <span class="skill-item">Problem Solving</span>
@@ -579,8 +476,7 @@
             <div class="content-wrapper text-center">
                 <h2 class="section-title text-3xl">Get In Touch</h2>
                 <p class="contact-text text-lg mb-8">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
-                    visions. Feel free to reach out!
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
                 </p>
                 <a href="mailto:sujalladde@gmail.com" class="btn-contact text-lg">
                     <i class="fas fa-envelope mr-2"></i> Email Me
@@ -610,5 +506,4 @@
     </script>
 
 </body>
-
 </html>
